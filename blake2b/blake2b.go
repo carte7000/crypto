@@ -74,6 +74,15 @@ func Sum256(data []byte) [Size256]byte {
 	return sum256
 }
 
+// SumX returns the BLAKE2b-256 checksum of the data.
+func SumX(x int, data []byte) []byte {
+	var sum [Size]byte
+	sumX := make([]byte, x)
+	checkSum(&sum, x, data)
+	copy(sumX[:], sum[:x])
+	return sumX
+}
+
 // New512 returns a new hash.Hash computing the BLAKE2b-512 checksum. A non-nil
 // key turns the hash into a MAC. The key must be between zero and 64 bytes long.
 func New512(key []byte) (hash.Hash, error) { return newDigest(Size, key) }
