@@ -16,8 +16,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"golang.org/x/crypto/ssh"
-	"golang.org/x/crypto/ssh/terminal"
+	"github.com/ecadlabs/crypto/ssh"
+	"github.com/ecadlabs/crypto/ssh/terminal"
 )
 
 func ExampleNewServerConn() {
